@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSURUOKA AKIYA NAVI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Noto+Sans+JP:wght@300;500&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-color: #F7F3F0; --text-main: #333333; --accent: #A67C52; }
+        body { background-color: var(--bg-color); color: var(--text-main); font-family: 'Noto Sans JP', sans-serif; letter-spacing: 0.05em; }
+        .serif { font-family: 'Noto Serif JP', serif; }
+        .en { font-family: 'Marcellus', serif; }
+        
+        /* ミニマルなボーダーデザイン */
+        .section-border { border-top: 1px solid #E0DADB; }
+        .item-row { border-bottom: 1px solid #E0DADB; transition: all 0.4s ease; }
+        .item-row:hover { background-color: rgba(255,255,255,0.5); }
+        
+        /* カスタムチェックボックス */
+        input[type="checkbox"] { appearance: none; width: 18px; height: 18px; border: 1px solid #333; border-radius: 0; position: relative; cursor: pointer; background: none; }
+        input[type="checkbox"]:checked { background-color: #333; }
+        input[type="checkbox"]:checked::after { content: '✓'; color: #fff; position: absolute; top: -2px; left: 3px; font-size: 12px; }
+        input[type="checkbox"]:checked + label { color: var(--accent); font-weight: 500; }
+
+        .sticky-footer { backdrop-filter: blur(10px); background-color: rgba(247, 243, 240, 0.8); }
+    </style>
+</head>
+<body class="pb-32">
+
+    <header class="py-16 px-6 text-center">
+        <span class="en text-xs tracking-[0.3em] uppercase opacity-60">Professional Audit</span>
+        <h1 class="serif text-3xl mt-4 tracking-wider leading-relaxed text-slate-800">鶴岡空き家内見<br>マスターナビ</h1>
+        <div class="mt-8 w-12 h-[1px] bg-slate-400 mx-auto"></div>
+    </header>
+
+    <main class="max-w-2xl mx-auto px-6">
+
+        <section class="mb-16">
+            <div class="flex items-baseline justify-between mb-6">
+                <h2 class="serif text-xl">1. 立地・外周</h2>
+                <span class="en text-[10px] opacity-40">SITE & EXTERIOR</span>
+            </div>
+            <div class="section-border">
+                <div class="item-row py-5 flex items-start">
+                    <input type="checkbox" id="c1_1" data-risk="10"><label for="c1_1" class="ml-4 text-sm leading-relaxed">接道状況（4m以上の公道か、セットバック必要か）</label>
+                </div>
+                <div class="item-row py-5 flex items-start">
+                    <input type="checkbox" id="c1_2" data-risk="5"><label for="c1_2" class="ml-4 text-sm leading-relaxed">駐車スペース（最低1台、できれば2台分あるか）</label>
+                </div>
+                <div class="item-row py-5 flex items-start">
+                    <input type="checkbox" id="c1_3" data-risk="5"><label for="c1_3" class="ml-4 text-sm leading-relaxed">境界標の有無（隣地との境界確定状況）</label>
+                </div>
+                <div class="item-row py-5 flex items-start">
+                    <input type="checkbox" id="c1_4" data-risk="10"><label for="c1_4" class="ml-4 text-sm leading-relaxed">ハザードマップ（土砂災害・洪水区域）</label>
+                </div>
+                <div class="item-row py-5 flex items-start">
+                    <input type="checkbox" id="c1_5" data-risk="3"><label for="c1_5" class="ml-4 text-sm leading-relaxed">周辺環境（隣家の放置状況や街並みの雰囲気）</label>
+                </div>
+                <div class="item-row py-5 flex items-start">
+                    <input type="checkbox" id="c1_6" data-risk="5"><label for="c1_6" class="ml-4 text-sm leading-relaxed">外構・植栽（越境やブロック塀のひび割れ）</label>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <div class="flex items-baseline justify-between mb-6">
+                <h2 class="serif text-xl">2. 鶴岡特有・雪国環境</h2>
+                <span class="en text-[10px] opacity-40">REGIONAL CLIMATE</span>
+            </div>
+            <div class="section-border">
+                <div class="item-row py-5 flex items-start">
+                    <input type="checkbox" id="c2_1" data-risk="15"><label for="c2_1" class="ml-4 text-sm leading-relaxed font-medium">落雪スペース（屋根雪が隣地や道路へ落ちないか）</label>
+                </div>
+                <div class="item-row py-5 flex items-start">
+                    <input type="checkbox" id="c2_2" data-risk="10"><label for="c2_2" class="ml-4 text-sm leading-relaxed">消雪パイプ・融雪設備の有無と稼働</label>
+                </div>
+                <div class="item-row py-5 flex items-start">
+                    <input type="checkbox" id="c2_3" data-risk="8"><label for="c2_3" class="ml-4 text-sm leading-relaxed">北西風対策（防風対策・建具の気密）</label>
+                </div>
+                <div class="item-row py-5 flex items-start">
+                    <input type="checkbox" id="c2_4" data-risk="10"><label for="c2_4" class="ml-4 text-sm leading-relaxed">雪害痕跡（軒先の折れ・歪み）</label>
+                </div>
+                <div class="item-row py-5 flex items-start">
+                    <input type="checkbox" id="c2_5" data-risk="5"><label for="c2_5" class="ml-4 text-sm leading-relaxed">塩害影響（外装設備、サッシの腐食）</label>
+                </div>
+                <div class="item-row py-5 flex items-start">
+                    <input type="checkbox" id="c2_6" data-risk="8"><label for="c2_6" class="ml-4 text-sm leading-relaxed">床下換気口の高さ（積雪時の通気確保）</label>
+                </div>
+            </div>
+        </section>
+
+        </main>
+
+    <div class="fixed bottom-0 left-0 w-full py-8 px-6 sticky-footer border-t border-slate-200">
+        <div class="max-w-2xl mx-auto">
+            <button onclick="analyze()" class="w-full bg-slate-900 text-white text-xs tracking-[0.2em] py-5 uppercase hover:bg-slate-800 transition">
+                Create Audit Report
+            </button>
+        </div>
+    </div>
+
+    <div id="modal" class="hidden fixed inset-0 bg-white z-50 flex flex-col items-center justify-center p-10 text-center">
+        <div class="en text-[10px] tracking-[0.4em] mb-10 opacity-50 uppercase">Analysis Results</div>
+        <h3 id="resTitle" class="serif text-2xl mb-6"></h3>
+        <div id="resSummary" class="text-sm leading-relaxed text-slate-500 max-w-xs mx-auto mb-16"></div>
+        
+        <button onclick="location.reload()" class="en text-[10px] tracking-widest border-b border-slate-900 pb-1 mb-8">RETRY</button>
+        
+        <a href="https://line.me" class="w-full max-w-xs bg-slate-900 text-white py-5 text-xs tracking-widest uppercase">Contact Specialist</a>
+    </div>
+
+    <script>
+        function analyze() {
+            let risk = 0;
+            document.querySelectorAll('input:checked').forEach(c => {
+                risk += parseInt(c.dataset.risk || 0);
+            });
+            
+            const modal = document.getElementById('modal');
+            const title = document.getElementById('resTitle');
+            const summary = document.getElementById('resSummary');
+            
+            modal.classList.remove('hidden');
+            
+            if (risk > 100) {
+                title.innerText = "要構造調査・大規模修繕";
+                summary.innerText = "複数の重要項目に課題が見られます。建築士による詳細なインスペクションを推奨します。";
+            } else {
+                title.innerText = "良好なコンディション";
+                summary.innerText = "基本性能は維持されています。鶴岡の風土に合わせた細かなチューニングで、十分に再生可能です。";
+            }
+        }
+    </script>
+</body>
+</html>
