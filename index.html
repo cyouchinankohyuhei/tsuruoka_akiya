@@ -7,173 +7,140 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #F2EFE9; color: #333333; font-family: 'Noto Serif JP', serif; }
+        body { background-color: #F2EFE9; color: #333333; font-family: 'Noto Serif JP', serif; line-height: 1.8; }
         .en { font-family: 'Cormorant Garamond', serif; font-style: italic; }
-        .item-card { border-bottom: 1px solid #D1CDC7; transition: background 0.3s; }
-        .item-card:hover { background-color: rgba(255, 255, 255, 0.3); }
+        .item-card { border-bottom: 1px solid #D1CDC7; }
+        .advice-box { background-color: #EAE5DD; border-radius: 4px; font-size: 0.75rem; color: #666; margin-top: 0.5rem; padding: 0.75rem; }
         
-        /* Custom Checkbox */
+        /* Custom UI */
         input[type="checkbox"] {
-            appearance: none; width: 20px; height: 20px;
+            appearance: none; width: 22px; height: 22px;
             border: 1px solid #888; border-radius: 50%;
-            cursor: pointer; position: relative; vertical-align: middle;
+            cursor: pointer; position: relative; vertical-align: middle; flex-shrink: 0;
         }
         input[type="checkbox"]:checked { background-color: #888; }
         input[type="checkbox"]:checked::after {
-            content: ''; position: absolute; top: 4px; left: 4px;
+            content: ''; position: absolute; top: 5px; left: 5px;
             width: 10px; height: 10px; border-radius: 50%; background: #F2EFE9;
         }
+        .photo-btn { font-size: 10px; border: 1px solid #888; padding: 2px 8px; margin-top: 8px; display: inline-block; opacity: 0.6; }
     </style>
 </head>
 <body class="p-6 md:p-12 pb-40">
 
-    <header class="max-w-3xl mx-auto mb-20">
-        <p class="en text-xl mb-2 opacity-60">Architecture & Infrastructure</p>
-        <h1 class="text-3xl md:text-4xl tracking-widest leading-snug">鶴岡空き家内見<br>マスターナビリスト</h1>
-        <div class="h-[1px] w-20 bg-black mt-8 opacity-20"></div>
+    <header class="max-w-3xl mx-auto mb-20 text-center md:text-left">
+        <p class="en text-xl mb-2 opacity-60">Professional Consultation</p>
+        <h1 class="text-3xl md:text-4xl tracking-widest leading-snug">鶴岡空き家内見<br>プロフェッショナル・ナビ</h1>
+        <div class="h-[1px] w-20 bg-black mt-8 opacity-20 mx-auto md:mx-0"></div>
     </header>
 
-    <main class="max-w-3xl mx-auto space-y-20">
+    <main class="max-w-3xl mx-auto space-y-24">
 
         <section>
-            <h2 class="en text-2xl mb-8 border-b border-black pb-2 italic">01 Site & Infrastructure</h2>
-            <div class="space-y-1">
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="i1" data-risk="10"><label for="i1" class="ml-4 text-sm leading-relaxed">前面道路との接道（幅員4m以上確保されているか）</label>
+            <h2 class="en text-2xl mb-8 border-b border-black pb-2 italic text-slate-700">01 Architecture & Structure</h2>
+            <div class="space-y-2">
+                <div class="item-card py-8 flex flex-col">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="e1" data-risk="20">
+                        <label for="e1" class="ml-4 text-sm font-semibold">雨漏りの形跡（小屋裏・天井・壁）</label>
+                    </div>
+                    <div class="advice-box">
+                        <strong>プロのアドバイス：</strong> 小屋裏に登り、垂木に黒いシミがないか確認してください。カビ臭い場合は目に見えない場所で腐食が進んでいる可能性があります。<br>
+                        <span class="photo-btn">📷 写真を撮る：シミ・カビ</span>
+                    </div>
                 </div>
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="i2" data-risk="5"><label for="i2" class="ml-4 text-sm leading-relaxed">駐車スペース（最低1台分、積雪時を考慮した広さ）</label>
-                </div>
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="i3" data-risk="5"><label for="i3" class="ml-4 text-sm leading-relaxed">境界標（隣地との境界杭が目視で確認できるか）</label>
-                </div>
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="i4" data-risk="15"><label for="i4" class="ml-4 text-sm leading-relaxed">ハザードマップ（土砂災害・洪水区域への該当）</label>
-                </div>
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="i5" data-risk="5"><label for="i5" class="ml-4 text-sm leading-relaxed">周辺の空き家状況（近隣の管理不足による二次被害）</label>
-                </div>
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="i6" data-risk="10"><label for="i6" class="ml-4 text-sm leading-relaxed">上下水道（公共下水か、浄化槽のメンテナンス状況）</label>
+                
+                <div class="item-card py-8 flex flex-col">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="e2" data-risk="20">
+                        <label for="e2" class="ml-4 text-sm font-semibold">基礎のひび割れと床の傾き</label>
+                    </div>
+                    <div class="advice-box">
+                        <strong>プロのアドバイス：</strong> 0.5mm以上の幅があるひびは「構造クラック」の疑いあり。床にビー玉を置き、特定の方向に転がる場合は土台の沈下を疑います。<br>
+                        <span class="photo-btn">📷 写真を撮る：基礎のヒビ</span>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section>
-            <h2 class="en text-2xl mb-8 border-b border-black pb-2 italic">02 External Structure</h2>
-            <div class="space-y-1">
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="e1" data-risk="20"><label for="e1" class="ml-4 text-sm leading-relaxed">基礎のクラック（構造に達する深いひび割れ）</label>
+            <h2 class="en text-2xl mb-8 border-b border-black pb-2 italic text-slate-700">02 Infrastructure & Utilities</h2>
+            <div class="space-y-2">
+                <div class="item-card py-8 flex flex-col">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="u1" data-risk="15">
+                        <label for="u1" class="ml-4 text-sm font-semibold">電気：単相3線式への対応状況</label>
+                    </div>
+                    <div class="advice-box">
+                        <strong>プロのアドバイス：</strong> 分電盤を見て、赤・白・黒の3本の線が来ていればOK。2本（単相2線式）の場合は、エアコン増設時に3〜10万円程度の引き直し工事が必要です。<br>
+                        <span class="photo-btn">📷 写真を撮る：分電盤の中</span>
+                    </div>
                 </div>
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="e2" data-risk="15"><label for="e2" class="ml-4 text-sm leading-relaxed">屋根材の劣化（瓦のズレ、板金の錆、腐食）</label>
-                </div>
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="e3" data-risk="15"><label for="e3" class="ml-4 text-sm leading-relaxed">外壁のひび・浮き（指で触ると白い粉がつくか）</label>
-                </div>
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="e4" data-risk="10"><label for="e4" class="ml-4 text-sm leading-relaxed">軒裏の雨染み（雨樋の詰まりや漏水の兆候）</label>
-                </div>
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="e5" data-risk="10"><label for="e5" class="ml-4 text-sm leading-relaxed">サッシの建て付け（窓の開閉が異常に重くないか）</label>
-                </div>
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="e6" data-risk="5"><label for="e6" class="ml-4 text-sm leading-relaxed">ベランダ・テラスの防水状態（目地のひび割れ）</label>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2 class="en text-2xl mb-8 border-b border-black pb-2 italic">03 Regional Climate Control</h2>
-            <div class="space-y-1">
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="s1" data-risk="15"><label for="s1" class="ml-4 text-sm leading-relaxed font-bold">屋根の落雪方向（隣地や道路へ落ちる危険性）</label>
-                </div>
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="s2" data-risk="10"><label for="s2" class="ml-4 text-sm leading-relaxed">消雪パイプ・融雪槽の有無と動作環境</label>
-                </div>
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="s3" data-risk="10"><label for="s3" class="ml-4 text-sm leading-relaxed">軒先の歪み（積雪の重みによる構造ダメージ）</label>
-                </div>
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="s4" data-risk="8"><label for="s4" class="ml-4 text-sm leading-relaxed">冬場の水道凍結対策（水抜き栓の位置と動作）</label>
-                </div>
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="s5" data-risk="5"><label for="s5" class="ml-4 text-sm leading-relaxed">床下換気口の高さ（積雪時に塞がらないか）</label>
-                </div>
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="s6" data-risk="5"><label for="s6" class="ml-4 text-sm leading-relaxed">玄関フードの有無（風除室の必要性）</label>
+                <div class="item-card py-8 flex flex-col">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="u2" data-risk="10">
+                        <label for="u2" class="ml-4 text-sm font-semibold">水回り設備の年式と水抜き栓</label>
+                    </div>
+                    <div class="advice-box">
+                        <strong>プロのアドバイス：</strong> 鶴岡の冬は水抜きが命です。電動水抜き栓のスイッチが入るか、手動栓が固着していないかを確認。給湯器は10年が交換目安です。
+                    </div>
                 </div>
             </div>
         </section>
 
         <section>
-            <h2 class="en text-2xl mb-8 border-b border-black pb-2 italic">04 Interior & Utilities</h2>
-            <div class="space-y-1">
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="u1" data-risk="15"><label for="u1" class="ml-4 text-sm leading-relaxed font-bold text-red-800 underline">雨漏りの形跡（天井、小屋裏、壁の大きなシミ）</label>
-                </div>
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="u2" data-risk="10"><label for="u2" class="ml-4 text-sm leading-relaxed">床のフカフカ（土台腐朽・白蟻の可能性）</label>
-                </div>
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="u3" data-risk="15"><label for="u3" class="ml-4 text-sm leading-relaxed">電気：単相3線式か（エアコン増設の可否）</label>
-                </div>
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="u4" data-risk="10"><label for="u4" class="ml-4 text-sm leading-relaxed">ガス：給湯器の年式と配管の老朽化</label>
-                </div>
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="u5" data-risk="10"><label for="u5" class="ml-4 text-sm leading-relaxed">残置物の量（トラック何台分か、処分費用の想定）</label>
-                </div>
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="u6" data-risk="5"><label for="u6" class="ml-4 text-sm leading-relaxed">浴室・キッチンのタイルの割れ（漏水リスク）</label>
-                </div>
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="u7" data-risk="5"><label for="u7" class="ml-4 text-sm leading-relaxed">建具の歪み（柱が傾いている兆候がないか）</label>
+            <h2 class="en text-2xl mb-8 border-b border-black pb-2 italic text-slate-700">03 Tsuruoka Climate Control</h2>
+            <div class="space-y-2">
+                <div class="item-card py-8 flex flex-col">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="s1" data-risk="15">
+                        <label for="s1" class="ml-4 text-sm font-semibold">落雪スペースと軒先の状態</label>
+                    </div>
+                    <div class="advice-box">
+                        <strong>プロのアドバイス：</strong> 屋根の勾配をチェック。雪が隣地に落ちる場合、雪止め設置やトラブル防止の対策が必要です。軒先が波打っている場合は雪の重みによるダメージです。
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="pb-20">
-            <h2 class="en text-2xl mb-8 border-b border-black pb-2 italic">05 Hidden Treasures</h2>
-            <div class="space-y-1">
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="h1" data-score="10"><label for="h1" class="ml-4 text-sm leading-relaxed">立派な梁や大黒柱（良質な古材の利用）</label>
+        <section>
+            <h2 class="en text-2xl mb-8 border-b border-black pb-2 italic text-slate-700">04 Estate Value</h2>
+            <div class="space-y-2">
+                <div class="item-card py-8 flex flex-col">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="h1" data-risk="10">
+                        <label for="h1" class="ml-4 text-sm font-semibold">残置物の量と処分コスト</label>
+                    </div>
+                    <div class="advice-box">
+                        <strong>コスト目安：</strong> 2トン車1台あたり約8〜10万円程度が目安。家一軒丸ごとだと30〜80万円かかることも。これを考慮して価格交渉の材料にします。<br>
+                        <span class="photo-btn">📷 写真を撮る：荷物の多い部屋</span>
+                    </div>
                 </div>
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="h2" data-score="10"><label for="h2" class="ml-4 text-sm leading-relaxed">希少なアンティーク建具・色ガラス</label>
-                </div>
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="h3" data-score="5"><label for="h3" class="ml-4 text-sm leading-relaxed">庭の樹木や景石（価値のある造園）</label>
-                </div>
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="h4" data-score="5"><label for="h4" class="ml-4 text-sm leading-relaxed">蔵や大きな物置（アトリエ等への転用可能性）</label>
-                </div>
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="h5" data-score="5"><label for="h5" class="ml-4 text-sm leading-relaxed">陽当たりの良さ（冬場の暖房効率に影響）</label>
-                </div>
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="h6" data-score="10"><label for="h6" class="ml-4 text-sm leading-relaxed">ネット環境（光ファイバーの引き込み状況）</label>
-                </div>
-                <div class="item-card py-6 flex items-start">
-                    <input type="checkbox" id="h7" data-score="15"><label for="h7" class="ml-4 text-sm leading-relaxed font-bold">総合的な「佇まい」と直感の良さ</label>
+                <div class="item-card py-8 flex flex-col">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="h2" data-score="10">
+                        <label for="h2" class="ml-4 text-sm font-semibold">古材・アンティーク建具の価値</label>
+                    </div>
+                    <div class="advice-box">
+                        <strong>お宝発見：</strong> ケヤキの梁や組子細工の欄間は、リフォーム時に再利用すると100万円以上の価値を生むことがあります。
+                    </div>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <div class="fixed bottom-0 left-0 w-full p-8 bg-white/60 backdrop-blur-md flex justify-center">
-        <button onclick="analyze()" class="bg-black text-white px-12 py-4 tracking-[0.3em] text-xs hover:bg-zinc-800 transition">GENERATE REPORT</button>
+    <div class="fixed bottom-0 left-0 w-full p-8 bg-[#F2EFE9]/80 backdrop-blur-md flex justify-center border-t border-zinc-200">
+        <button onclick="analyze()" class="bg-black text-white px-16 py-5 tracking-[0.3em] text-[10px] hover:bg-zinc-800 transition shadow-2xl">GENERATE REPORT</button>
     </div>
 
     <div id="modal" class="hidden fixed inset-0 bg-zinc-900/90 flex items-center justify-center p-6 z-50">
-        <div class="bg-[#F2EFE9] p-10 max-w-md w-full text-center">
-            <p class="en italic text-lg mb-4 opacity-60">Result Analysis</p>
-            <h3 id="resTitle" class="text-xl mb-6 tracking-widest font-semibold"></h3>
-            <p id="resDesc" class="text-xs leading-relaxed text-zinc-600 mb-10 text-left"></p>
-            <button onclick="location.reload()" class="border-b border-black text-[10px] tracking-widest pb-1 mb-8">TRY AGAIN</button>
-            <a href="https://line.me" class="block bg-black text-white py-4 text-[10px] tracking-[0.2em]">CONTACT SPECIALIST</a>
+        <div class="bg-[#F2EFE9] p-10 max-w-md w-full shadow-2xl relative">
+            <p class="en italic text-lg mb-4 opacity-40">Final Assessment</p>
+            <h3 id="resTitle" class="text-xl mb-6 tracking-[0.2em] font-bold"></h3>
+            <p id="resDesc" class="text-[11px] leading-[2] text-zinc-600 mb-10 text-left bg-white/50 p-4 border border-zinc-200"></p>
+            <button onclick="location.reload()" class="border-b border-black text-[10px] tracking-widest pb-1 mb-8 opacity-60">CLOSE & RETRY</button>
+            <a href="https://line.me" class="block bg-black text-white py-5 text-[10px] tracking-[0.3em] hover:bg-zinc-800 transition">相談を予約する</a>
         </div>
     </div>
 
@@ -189,15 +156,15 @@
             const desc = document.getElementById('resDesc');
             modal.classList.remove('hidden');
 
-            if (risk > 120) {
-                title.innerText = "要精密診断物件";
-                desc.innerText = "構造・インフラ共に課題が多く見られます。建築士・設備士による詳細な見積もりが必要です。大幅な改修を前提とした交渉をお勧めします。";
-            } else if (score > 40) {
-                title.innerText = "希少な「お宝」物件";
-                desc.innerText = "リスクは制御可能であり、それ以上に建材や佇まいの価値が高い物件です。早急な詳細調査と確保をお勧めします。";
+            if (risk >= 50) {
+                title.innerText = "要・専門家同行調査";
+                desc.innerHTML = "構造やインフラに重要課題のサインが出ています。特に「雨漏り」や「電気系統」は放置すると被害が拡大します。建築士・設備士による実地調査を強く推奨します。";
+            } else if (score >= 10) {
+                title.innerText = "磨けば光るお宝物件";
+                desc.innerHTML = "基礎がしっかりしており、再利用価値の高い建具が含まれています。初期コストを抑えつつ、鶴岡らしい趣のある住まいに再生可能です。";
             } else {
-                title.innerText = "標準的なポテンシャル";
-                desc.innerText = "鶴岡の平均的な空き家状態です。部分的なインフラ更新と清掃で、十分に快適な住まいに再生可能です。";
+                title.innerText = "標準的なコンディション";
+                desc.innerHTML = "大きなリスクは見当たりませんが、経年なりのメンテナンスが必要です。まずは清掃と不要物の処分、水回りの点検から始めましょう。";
             }
         }
     </script>
