@@ -9,7 +9,7 @@
     <style>
         body { background-color: #F2EFE9; color: #333333; font-family: 'Noto Serif JP', serif; line-height: 1.8; }
         .en { font-family: 'Cormorant Garamond', serif; font-style: italic; }
-        .item-card { border-bottom: 1px solid #D1CDC7; }
+        .item-card { border-bottom: 1px solid #D1CDC7; padding: 1.5rem 0; }
         .advice-box { background-color: #EAE5DD; border-radius: 4px; font-size: 0.75rem; color: #666; margin-top: 0.5rem; padding: 0.75rem; }
         .camera-label { display: inline-flex; align-items: center; background: #333; color: white; padding: 6px 12px; border-radius: 2px; font-size: 10px; cursor: pointer; margin-top: 10px; }
         .preview-img { width: 50px; height: 50px; object-fit: cover; border-radius: 2px; margin-top: 5px; }
@@ -28,78 +28,215 @@
 
     <header class="max-w-3xl mx-auto mb-16">
         <p class="en text-xl mb-2 opacity-60">Audit & Cost Simulation</p>
-        <h1 class="text-3xl tracking-widest leading-snug">鶴岡空き家内見<br>概算見積シミュレーター</h1>
+        <h1 class="text-3xl tracking-widest leading-snug">鶴岡空き家内見<br>プロフェッショナル・ナビ</h1>
+        <p class="text-[10px] mt-4 opacity-50">建築士・電気工事士・設備士の視点による31項目診断</p>
     </header>
 
-    <main class="max-w-3xl mx-auto space-y-16">
+    <main class="max-w-3xl mx-auto space-y-20">
 
         <section>
-            <h2 class="en text-2xl mb-6 border-b border-black pb-2 italic">01 Structure</h2>
+            <h2 class="en text-2xl mb-6 border-b border-black pb-2 italic">01 Site & Exterior</h2>
             <div class="space-y-1">
-                <div class="item-card py-6 flex flex-col">
+                <div class="item-card flex flex-col">
                     <div class="flex items-start">
-                        <input type="checkbox" id="m1" data-pro="500000" data-diy="50000"><label for="m1" class="ml-4 text-sm font-semibold">雨漏りの修繕（屋根・防水処理）</label>
+                        <input type="checkbox" id="m1" data-pro="0" data-diy="0"><label for="m1" class="ml-4 text-sm font-semibold">前面道路の幅員（4m以上、除雪車の進入可否）</label>
                     </div>
-                    <div class="advice-box">業者：部分補修〜葺き替え想定。DIY：防水テープやコーキング等。</div>
                 </div>
-                <div class="item-card py-6 flex flex-col">
+                <div class="item-card flex flex-col">
                     <div class="flex items-start">
-                        <input type="checkbox" id="m2" data-pro="150000" data-diy="20000"><label for="m2" class="ml-4 text-sm font-semibold">基礎クラック・床のたわみ補修</label>
+                        <input type="checkbox" id="m2" data-pro="300000" data-diy="50000"><label for="m2" class="ml-4 text-sm font-semibold">駐車場の有無・拡幅（軽から普通車への対応）</label>
+                    </div>
+                </div>
+                <div class="item-card flex flex-col">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="m3" data-pro="0" data-diy="0"><label for="m3" class="ml-4 text-sm font-semibold">ハザードマップ（洪水・土砂災害区域の該当）</label>
+                    </div>
+                </div>
+                <div class="item-card flex flex-col">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="m4" data-pro="100000" data-diy="30000"><label for="m4" class="ml-4 text-sm font-semibold">庭木・雑草の管理（隣地への越境、伐採）</label>
+                    </div>
+                </div>
+                <div class="item-card flex flex-col">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="m5" data-pro="500000" data-diy="150000"><label for="m5" class="ml-4 text-sm font-semibold">外壁のひび割れ・塗装劣化（チョーキング）</label>
+                    </div>
+                </div>
+                <div class="item-card flex flex-col">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="m6" data-pro="0" data-diy="0"><label for="m6" class="ml-4 text-sm font-semibold">隣地境界（境界標の有無、トラブルの火種）</label>
                     </div>
                 </div>
             </div>
-            <label class="camera-label"><span>📷 構造写真を撮影</span><input type="file" accept="image/*" capture="environment" class="hidden" onchange="preview(this)"></label>
+            <label class="camera-label"><span>📷 外部の撮影</span><input type="file" accept="image/*" capture="environment" class="hidden" onchange="preview(this)"></label>
             <div class="flex gap-2 mt-2"></div>
         </section>
 
         <section>
-            <h2 class="en text-2xl mb-6 border-b border-black pb-2 italic">02 Utilities</h2>
+            <h2 class="en text-2xl mb-6 border-b border-black pb-2 italic text-red-900">02 Structure & Roof</h2>
             <div class="space-y-1">
-                <div class="item-card py-6 flex flex-col">
+                <div class="item-card flex flex-col">
                     <div class="flex items-start">
-                        <input type="checkbox" id="m3" data-pro="800000" data-diy="150000"><label for="m3" class="ml-4 text-sm font-semibold">風呂：タイルからユニットバスへの変更</label>
+                        <input type="checkbox" id="m7" data-pro="500000" data-diy="50000"><label for="m7" class="ml-4 text-sm font-bold text-red-800">雨漏りの形跡（天井、小屋裏、壁のシミ）</label>
                     </div>
-                    <div class="advice-box">DIY：塗装やパネル貼りの表面改修を想定。</div>
+                    <div class="advice-box">垂木が変色している場合は要注意。DIYはコーキング等の一時しのぎとなります。</div>
                 </div>
-                <div class="item-card py-6 flex flex-col">
+                <div class="item-card flex flex-col">
                     <div class="flex items-start">
-                        <input type="checkbox" id="m4" data-pro="100000" data-diy="0"><label for="m4" class="ml-4 text-sm font-semibold">電気：単相3線式への切り替え（幹線工事）</label>
+                        <input type="checkbox" id="m8" data-pro="200000" data-diy="30000"><label for="m8" class="ml-4 text-sm font-semibold">基礎の貫通クラック（0.5mm以上の深いヒビ）</label>
                     </div>
-                    <div class="advice-box">※DIY不可。必ず電気工事士が施工してください。</div>
                 </div>
-                <div class="item-card py-6 flex flex-col">
+                <div class="item-card flex flex-col">
                     <div class="flex items-start">
-                        <input type="checkbox" id="m5" data-pro="150000" data-diy="30000"><label for="m5" class="ml-4 text-sm font-semibold">給湯器の交換・水抜き栓整備</label>
+                        <input type="checkbox" id="m9" data-pro="150000" data-diy="20000"><label for="m9" class="ml-4 text-sm font-semibold">床の沈み・傾き（シロアリ被害や土台の腐朽）</label>
+                    </div>
+                </div>
+                <div class="item-card flex flex-col">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="m10" data-pro="800000" data-diy="150000"><label for="m10" class="ml-4 text-sm font-semibold text-red-800">残置物の多さ（トラック2台分以上の想定）</label>
+                    </div>
+                    <div class="advice-box">DIY価格はクリーンセンターへの自己搬入経費です。</div>
+                </div>
+                <div class="item-card flex flex-col">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="m11" data-pro="300000" data-diy="80000"><label for="m11" class="ml-4 text-sm font-semibold text-red-800">建具の歪み・サッシの建て付け不全</label>
+                    </div>
+                </div>
+                <div class="item-card flex flex-col">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="m12" data-pro="100000" data-diy="10000"><label for="m12" class="ml-4 text-sm font-semibold text-red-800">床下の湿気・換気口の状況</label>
                     </div>
                 </div>
             </div>
-            <label class="camera-label"><span>📷 設備写真を撮影</span><input type="file" accept="image/*" capture="environment" class="hidden" onchange="preview(this)"></label>
+            <label class="camera-label"><span>📷 構造・シミの撮影</span><input type="file" accept="image/*" capture="environment" class="hidden" onchange="preview(this)"></label>
             <div class="flex gap-2 mt-2"></div>
         </section>
 
         <section>
-            <h2 class="en text-2xl mb-6 border-b border-black pb-2 italic">03 Climate & Land</h2>
+            <h2 class="en text-2xl mb-6 border-b border-black pb-2 italic text-blue-900">03 Tsuruoka Climate</h2>
             <div class="space-y-1">
-                <div class="item-card py-6 flex flex-col">
+                <div class="item-card flex flex-col">
                     <div class="flex items-start">
-                        <input type="checkbox" id="m6" data-pro="200000" data-diy="40000"><label for="m6" class="ml-4 text-sm font-semibold">雪止め設置・軒先補修</label>
+                        <input type="checkbox" id="m13" data-pro="200000" data-diy="30000"><label for="m13" class="ml-4 text-sm font-semibold">落雪スペースの確保（隣地・道路への配慮）</label>
                     </div>
                 </div>
-                <div class="item-card py-6 flex flex-col">
+                <div class="item-card flex flex-col">
                     <div class="flex items-start">
-                        <input type="checkbox" id="m7" data-pro="300000" data-diy="100000"><label for="m7" class="ml-4 text-sm font-semibold">残置物撤去（家一軒丸ごと想定）</label>
+                        <input type="checkbox" id="m14" data-pro="150000" data-diy="20000"><label for="m14" class="ml-4 text-sm font-semibold">消雪パイプ・融雪設備の有無と稼働</label>
                     </div>
-                    <div class="advice-box">DIY：自分でクリーンセンターへ持ち込む場合のガソリン代・手数料。</div>
+                </div>
+                <div class="item-card flex flex-col">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="m15" data-pro="300000" data-diy="50000"><label for="m15" class="ml-4 text-sm font-semibold">軒先の歪み・雪による雨樋の破損</label>
+                    </div>
+                </div>
+                <div class="item-card flex flex-col">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="m16" data-pro="50000" data-diy="5000"><label for="m16" class="ml-4 text-sm font-semibold">水抜き栓の動作（凍結防止の必須設備）</label>
+                    </div>
+                </div>
+                <div class="item-card flex flex-col">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="m17" data-pro="100000" data-diy="20000"><label for="m17" class="ml-4 text-sm font-semibold">北西風対策（防風室やサッシの気密性）</label>
+                    </div>
+                </div>
+                <div class="item-card flex flex-col">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="m18" data-pro="100000" data-diy="30000"><label for="m18" class="ml-4 text-sm font-semibold">床下換気口の高さ（積雪時の通気）</label>
+                    </div>
                 </div>
             </div>
-            <label class="camera-label"><span>📷 現況写真を撮影</span><input type="file" accept="image/*" capture="environment" class="hidden" onchange="preview(this)"></label>
+            <label class="camera-label"><span>📷 雪対策の撮影</span><input type="file" accept="image/*" capture="environment" class="hidden" onchange="preview(this)"></label>
             <div class="flex gap-2 mt-2"></div>
         </section>
 
-        </main>
+        <section>
+            <h2 class="en text-2xl mb-6 border-b border-black pb-2 italic text-green-900">04 Utilities & Wet Area</h2>
+            <div class="space-y-1">
+                <div class="item-card flex flex-col">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="m19" data-pro="1000000" data-diy="150000"><label for="m19" class="ml-4 text-sm font-semibold">風呂：タイル張りからユニットバスへ</label>
+                    </div>
+                </div>
+                <div class="item-card flex flex-col">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="m20" data-pro="100000" data-diy="0"><label for="m20" class="ml-4 text-sm font-bold text-red-800">電気：単相3線式への切り替え工事</label>
+                    </div>
+                    <div class="advice-box">※DIY不可。エアコン増設に必須です。</div>
+                </div>
+                <div class="item-card flex flex-col">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="m21" data-pro="150000" data-diy="30000"><label for="m21" class="ml-4 text-sm font-semibold text-red-800 underline">給湯器の更新（年式・ガスの種類確認）</label>
+                    </div>
+                </div>
+                <div class="item-card flex flex-col">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="m22" data-pro="300000" data-diy="50000"><label for="m22" class="ml-4 text-sm font-semibold">トイレ：浄化槽か公共下水か（切替費用）</label>
+                    </div>
+                </div>
+                <div class="item-card flex flex-col">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="m23" data-pro="50000" data-diy="5000"><label for="m23" class="ml-4 text-sm font-semibold">分電盤の空き回路と老朽化</label>
+                    </div>
+                </div>
+                <div class="item-card flex flex-col">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="m24" data-pro="50000" data-diy="10000"><label for="m24" class="ml-4 text-sm font-semibold">キッチン・水栓の油汚れ、漏水兆候</label>
+                    </div>
+                </div>
+            </div>
+            <label class="camera-label"><span>📷 水回り・盤の撮影</span><input type="file" accept="image/*" capture="environment" class="hidden" onchange="preview(this)"></label>
+            <div class="flex gap-2 mt-2"></div>
+        </section>
+
+        <section class="pb-20">
+            <h2 class="en text-2xl mb-6 border-b border-black pb-2 italic text-orange-800">05 Treasures & Value</h2>
+            <div class="space-y-1">
+                <div class="item-card flex flex-col">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="m25" data-pro="-200000" data-diy="-50000"><label for="m25" class="ml-4 text-sm font-semibold">良質な古材（梁、大黒柱）の再利用価値</label>
+                    </div>
+                    <div class="advice-box">価値が高いものはマイナス計上（資産）として考えます。</div>
+                </div>
+                <div class="item-card flex flex-col">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="m26" data-pro="0" data-diy="0"><label for="m26" class="ml-4 text-sm font-semibold">希少な昭和レトロ建具、組子、型板ガラス</label>
+                    </div>
+                </div>
+                <div class="item-card flex flex-col">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="m27" data-pro="0" data-diy="0"><label for="m27" class="ml-4 text-sm font-semibold">蔵・物置・土間などの活用可能スペース</label>
+                    </div>
+                </div>
+                <div class="item-card flex flex-col">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="m28" data-pro="0" data-diy="0"><label for="m28" class="ml-4 text-sm font-semibold">陽当たり・冬場の熱取得ポテンシャル</label>
+                    </div>
+                </div>
+                <div class="item-card flex flex-col">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="m29" data-pro="50000" data-diy="10000"><label for="m29" class="ml-4 text-sm font-semibold">ネット環境（光ファイバー引込可否）</label>
+                    </div>
+                </div>
+                <div class="item-card flex flex-col">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="m30" data-pro="100000" data-diy="20000"><label for="m30" class="ml-4 text-sm font-semibold">バリアフリー化のしやすさ（段差の状況）</label>
+                    </div>
+                </div>
+                <div class="item-card flex flex-col border-none">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="m31" data-pro="0" data-diy="0"><label for="m31" class="ml-4 text-sm font-bold italic">総合的な「佇まい」と直感の良さ</label>
+                    </div>
+                </div>
+            </div>
+            <label class="camera-label"><span>📷 お宝ポイントの撮影</span><input type="file" accept="image/*" capture="environment" class="hidden" onchange="preview(this)"></label>
+            <div class="flex gap-2 mt-2"></div>
+        </section>
+
+    </main>
 
     <div class="fixed bottom-0 left-0 w-full p-8 bg-[#F2EFE9]/90 backdrop-blur-md flex justify-center border-t border-zinc-200">
-        <button onclick="calculate()" class="bg-black text-white px-12 py-5 tracking-[0.3em] text-[10px] hover:bg-zinc-800 transition shadow-2xl uppercase">Calculate Report</button>
+        <button onclick="calculate()" class="bg-black text-white px-12 py-5 tracking-[0.3em] text-[10px] hover:bg-zinc-800 transition shadow-2xl uppercase">Generate Report</button>
     </div>
 
     <div id="modal" class="hidden fixed inset-0 bg-zinc-900/95 flex items-center justify-center p-4 z-50 overflow-y-auto">
@@ -107,22 +244,26 @@
             <h2 class="serif text-xl mb-8 tracking-widest text-center border-b border-zinc-300 pb-4">内見診断レポート</h2>
             
             <div class="space-y-6 mb-10">
-                <div class="flex justify-between items-baseline">
-                    <span class="text-xs opacity-60">① 全て業者依頼の場合</span>
-                    <span id="proCost" class="text-2xl font-bold">¥0</span>
+                <div class="flex justify-between items-baseline border-b border-zinc-200 pb-2">
+                    <span class="text-xs opacity-60">① 業者発注：フル改修概算</span>
+                    <span id="proCost" class="text-xl font-bold">¥0</span>
                 </div>
-                <div class="flex justify-between items-baseline">
-                    <span class="text-xs opacity-60">② DIYを併用した場合</span>
+                <div class="flex justify-between items-baseline border-b border-orange-200 pb-2">
+                    <span class="text-xs text-orange-800">② DIY併用：コスト削減概算</span>
                     <span id="diyCost" class="text-2xl font-bold text-orange-800">¥0</span>
                 </div>
-                <p class="text-[10px] leading-relaxed text-zinc-500">※上記はあくまで概算です。現場の状況や材料費の変動により増減します。特に電気・ガス・構造に関わる部分は必ずプロへご相談ください。</p>
+                <div class="bg-white/50 p-4 rounded text-[10px] leading-relaxed text-zinc-500">
+                    <strong>【国家資格者の助言】</strong><br>
+                    
+                    <br>電気・ガス・構造に関わるチェックがついている場合、DIYは危険です。安全に関わる部分は業者発注を、仕上げや清掃はDIYを推奨します。
+                </div>
             </div>
 
-            <div id="finalPhotos" class="flex flex-wrap gap-2 mb-10 border-t border-zinc-200 pt-6"></div>
+            <div id="finalPhotos" class="flex flex-wrap gap-2 mb-10"></div>
 
             <div class="flex flex-col gap-4">
-                <button onclick="location.reload()" class="text-[10px] tracking-widest opacity-60">閉じて再入力する</button>
-                <a href="https://line.me" class="block bg-black text-white py-5 text-[10px] tracking-[0.3em] text-center uppercase">専門家に詳細を相談する</a>
+                <button onclick="location.reload()" class="text-[10px] tracking-widest opacity-60 underline">再入力</button>
+                <a href="https://line.me" class="block bg-black text-white py-5 text-[10px] tracking-[0.3em] text-center uppercase">この結果を専門家に相談</a>
             </div>
         </div>
     </div>
